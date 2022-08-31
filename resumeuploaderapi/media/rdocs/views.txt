@@ -1,0 +1,113 @@
+
+
+
+Working as Software Engineer in Nucent Technologies Pvt Ltd. & I’m responsible for Developing applications.
+2 years of Expertise in Software product Development using Python, Django, Sqlite and MySQL.
+● Having good knowledge on MVT architecture.
+● Strong knowledge on Creation of tables, Views, Procedures, and other database objects.
+● Having good knowledge on Creating APIs using requests and Django Rest Frameworks.
+● Special skills in developing user friendly, simple yet effective web-based applications.
+● Proficient in writing SQL Queries, tables, views on various databases like Mysql and SQLite.
+● Ability to successfully multi-task and prioritize work.
+● Ability to work both independently and drive problem resolution with limited direction.
+
+Skills:-
+• Languages : -                 Python, Django.
+• Web Technologies : -     JavaScript, HTML, CSS, Bootstrap (Basic Knowledge).
+• Database : -                   Sqlite , Mysql
+• Operating Systems : -    Windows
+• Source Controls : -         Git
+• Others : -                        Postman, Swagger, Jenkins , Pytester, Jira, WinScp.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Create your views here.
+def room_list(request):
+    context = {'room_list': Rooms.objects.all()}
+    return render(request, 'room_list.html', context)
+
+
+def room_form(request):
+    if request.method == 'POST':
+            post = Rooms()
+            post.building = request.POST.get('building')
+            post.floor = request.POST.get('floor')
+            post.name = request.POST.get('name')
+            post.room_number = request.POST.get('room_number')
+            post.save()
+
+            return render(request, 'room_form.html')
+
+    else:
+        return render(request, 'room_form.html')
+
+
+def room_edit(request, id):
+    object = Rooms.objects.get(pk=id)
+    return render(request, 'edit.html', {'object': object})
+
+
+def room_update(request, id):
+    object = Rooms.objects.get(pk=id)
+    form = RoomForm(request.POST, instance=object)
+    if form.is_valid:
+        form.save()
+        object = Rooms.objects.all()
+        return redirect('room_list')
+
+
+def room_delete(request, id=0):
+    room = Rooms.objects.get(pk=id)
+    room.delete()
+    return redirect('/list')
+
+
+
+
+
+
+
+
+Singleton Method is a type of Creational Design pattern and is one of the simplest design pattern available to us. It is a way to provide one and only one object of a particular type. It involves only one class to create methods and specify the objects. 
+Singleton Design Pattern can be understood by a very simple example of Database connectivity. When each object creates a unique Database Connection to the Database, it will highly affect the cost and expenses of the project. So, it is always better to make a single connection rather than making extra irrelevant connections which can be easily done by Singleton Design Pattern.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3 Pin ConstanVelocity Joint :-
+
+project is based on coupling. A coupling is a device used to connect two shafts together at their ends for the purpose of transmitting power.couplings don&#x27;t normally allow disconnection of shafts during operation, however there are limiting couplings which can slip or disconnect when some torque limit is exceeded.
